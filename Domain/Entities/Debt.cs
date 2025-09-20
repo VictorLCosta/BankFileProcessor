@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities;
 
-internal class Debt : BaseEntity<ContractId>
+public class Debt : BaseEntity<ContractId>
 {
 
     [Description("CODFILIAL")]

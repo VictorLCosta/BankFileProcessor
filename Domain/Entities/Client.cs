@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
+﻿namespace Domain.Entities;
 
-namespace Domain.Entities;
-
-internal class Client : BaseEntity<ContractId>
+public class Client : BaseEntity<ContractId>
 {
     private string _nomeCliente = string.Empty;
     /// <summary>

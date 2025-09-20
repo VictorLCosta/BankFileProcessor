@@ -2,7 +2,7 @@
 
 namespace Domain.Entities;
 
-internal class Installment : BaseEntity<ContractId>
+public class Installment : BaseEntity<ContractId>
 {
     [Description("NUMPARC")]
     public int NumeroParcela { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities;
 
-internal class Email : BaseEntity<ContractId>
+public class Email : BaseEntity<ContractId>
 {
     /// <summary>
     /// DCREMAIL - varchar(300) - not null

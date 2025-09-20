@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities;
 
-internal class Address : BaseEntity<ContractId>
+public class Address : BaseEntity<ContractId>
 {
     /// <summary>
     /// CODCPFCNPJCLI - numeric(14,0) - not null

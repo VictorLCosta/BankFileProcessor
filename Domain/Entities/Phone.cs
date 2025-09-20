@@ -2,7 +2,7 @@
 
 namespace Domain.Entities;
 
-internal class Phone : BaseEntity<ContractId>
+public class Phone : BaseEntity<ContractId>
 {
     public long Numero { get; set; }
 
