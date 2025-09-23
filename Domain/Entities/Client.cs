@@ -6,7 +6,7 @@ public class Client : BaseEntity<ContractId>
     /// <summary>
     /// NOMCLI - varchar(40) - not null
     /// </summary>
-    [Description("NOMCLI")]
+    [Column("NOMCLI")]
     public string NomeCliente
     {
         get => _nomeCliente;
@@ -28,32 +28,32 @@ public class Client : BaseEntity<ContractId>
     /// <summary>
     /// CODCPFCNPJCLI - numeric(14,0) - not null
     /// </summary>
-    [Description("CODCPFCNPJCLI")]
+    [Column("CODCPFCNPJCLI")]
     public long CpfCnpj { get; set; }
 
     /// <summary>
     /// TIPPESSCLI - char(1) - not null
     /// </summary>
-    [Description("TIPPESSCLI")]
+    [Column("TIPPESSCLI")]
     public TipoPessoa TipoPessoa { get; set; }
 
     /// <summary>
     /// CODCLIEMP - varchar(50)
     /// </summary>
-    [Description("CODCLIEMP")]
+    [Column("CODCLIEMP")]
     public string? CodigoClienteEmpresa { get; set; }
 
     /// <summary>
     /// DATNASCCLI - datetime
     /// </summary>
-    [Description("DATNASCCLI")]
+    [Column("DATNASCCLI")]
     public DateTime? DatNascCliente { get; set; }
 
     private string? _numRgCliente;
     /// <summary>
     /// NUMRGIDENTCLI - varchar(15)
     /// </summary>
-    [Description("NUMRGIDENTCLI")]
+    [Column("NUMRGIDENTCLI")]
     public string? NumRgCliente
     {
         get => _numRgCliente;
@@ -64,7 +64,7 @@ public class Client : BaseEntity<ContractId>
     /// <summary>
     /// NOMCONJUCLI - varchar(40)
     /// </summary>
-    [Description("NOMCONJUCLI")]
+    [Column("NOMCONJUCLI")]
     public string? NomeConjCliente
     {
         get => _nomeConjCliente;
@@ -75,7 +75,7 @@ public class Client : BaseEntity<ContractId>
     /// <summary>
     /// FILIACAOCLI - varchar(80)
     /// </summary>
-    [Description("FILIACAOCLI")]
+    [Column("FILIACAOCLI")]
     public string? FiliacaoCliente
     {
         get => _filiacaoCliente;
@@ -96,24 +96,24 @@ public class Client : BaseEntity<ContractId>
     /// <summary>
     /// NUMTELRESCLI - numeric(15,0) - not null
     /// </summary>
-    [Description("NUMTELRESCLI")]
+    [Column("NUMTELRESCLI")]
     public long TelefoneResidencial { get; set; }
 
     /// <summary>
     /// NUMTELCELCLI - numeric(15,0) - not null
     /// </summary>
-    [Description("NUMTELCELCLI")]
+    [Column("NUMTELCELCLI")]
     public long TelefoneCelular { get; set; }
 
     private string? _localTrabalho;
     /// <summary>
     /// DCRLOCTRABCLI - varchar(35)
     /// </summary>
-    [Description("DCRLOCTRABCLI")]
+    [Column("DCRLOCTRABCLI")]
     public string? LocalTrabalho
     {
         get => _localTrabalho;
-        set => _localTrabalho = value?.Substring(0, Math.Min(value.Length, 35));
+        set => _localTrabalho = value?[..Math.Min(value.Length, 35)];
     }
 
     private Address? _enderecoComercial;
@@ -130,80 +130,80 @@ public class Client : BaseEntity<ContractId>
     /// <summary>
     /// NUMTELCOMCLI - numeric(15,0) - not null
     /// </summary>
-    [Description("NUMTELCOMCLI")]
+    [Column("NUMTELCOMCLI")]
     public long TelefoneComercial { get; set; }
 
     /// <summary>
     /// NUMFAXCOMCLI - numeric(15,0) - not null
     /// </summary>
-    [Description("NUMFAXCOMCLI")]
+    [Column("NUMFAXCOMCLI")]
     public long TelefoneFax { get; set; }
 
     /// <summary>
     /// CODCORRESPCLI - char(1) - not null
     /// </summary>
-    [Description("CODCORRESPCLI")]
+    [Column("CODCORRESPCLI")]
     public string CodigoCorrespondenciaCliente { get; set; } = null!;
 
     private string? _email;
     /// <summary>
     /// ENDEMAILCLI - varchar(120)
     /// </summary>
-    [Description("ENDEMAILCLI")]
+    [Column("ENDEMAILCLI")]
     public string? Email
     {
         get => _email;
         set => _email = string.IsNullOrEmpty(value) ? null :
-                        value.ToLower().Substring(0, Math.Min(value.Length, 120));
+                        value.ToLower()[..Math.Min(value.Length, 120)];
     }
 
     /// <summary>
     /// NOMSOCCLI - varchar(80)
     /// </summary>
-    [Description("NOMSOCCLI")]
+    [Column("NOMSOCCLI")]
     public string? NomeSocioCliente { get; set; }
 
     /// <summary>
     /// NOMCONTCLI - varchar(40)
     /// </summary>
-    [Description("NOMCONTCLI")]
+    [Column("NOMCONTCLI")]
     public string? NomeContatoCliente { get; set; }
 
     /// <summary>
     /// DATCADCLI - datetime
     /// </summary>
-    [Description("DATCADCLI")]
+    [Column("DATCADCLI")]
     public DateTime? DataCadastroCliente { get; set; }
 
     /// <summary>
     /// DATREMARQ - datetime
     /// </summary>
-    [Description("DATREMARQ")]
+    [Column("DATREMARQ")]
     public DateTime DataRemessaArquivo { get; set; }
 
     /// <summary>
     /// DATATUALREG - datetime
     /// </summary>
-    [Description("DATATUALREG")]
+    [Column("DATATUALREG")]
     public DateTime DataAtualizacaoRegistro { get; set; }
 
     /// <summary>
     /// NUMTELCONTCLI - numeric(15,0) - not null
     /// </summary>
-    [Description("NUMTELCONTCLI")]
+    [Column("NUMTELCONTCLI")]
     public long TelefoneContato { get; set; }
 
     /// <summary>
     /// NUMTELCOBRCLI - numeric(15,0) - not null
     /// </summary>
-    [Description("NUMTELCOBRCLI")]
+    [Column("NUMTELCOBRCLI")]
     public long TelefoneCobranca { get; set; }
 
     private int _ramalTelefoneComercial;
     /// <summary>
     /// NUMRAMTELCOMCLI - numeric(4,0) - not null
     /// </summary>
-    [Description("NUMRAMTELCOMCLI")]
+    [Column("NUMRAMTELCOMCLI")]
     public int RamalTelefoneComercial
     {
         get => _ramalTelefoneComercial;
@@ -219,41 +219,41 @@ public class Client : BaseEntity<ContractId>
     /// <summary>
     /// Filial - CODFILIAL
     /// </summary>
-    [Description("CODFILIAL")]
+    [Column("CODFILIAL")]
     public int? CodigoFilial { get; set; }
 
     /// <summary>
     /// Endereço de Cobrança
     /// </summary>
-    public Address EnderecoCobranca { get; set; }
+    public Address? EnderecoCobranca { get; set; }
 
     /// <summary>
     /// TIPREGIMECASAMENTO - char(1)
     /// </summary>
-    [Description("TIPREGIMECASAMENTO")]
+    [Column("TIPREGIMECASAMENTO")]
     public char TipoRegimeCasamento { get; set; }
 
     /// <summary>
     /// TIPSEXOCLI - char(1)
     /// </summary>
-    [Description("TIPSEXOCLI")]
+    [Column("TIPSEXOCLI")]
     public char Sexo { get; set; }
 
     /// <summary>
     /// CODESTADOCIVIL - tinyint
     /// </summary>
-    [Description("CODESTADOCIVIL")]
+    [Column("CODESTADOCIVIL")]
     public EstadoCivil? CodigoEstadoCivil { get; set; }
 
     /// <summary>
     /// REGTIMESTAMP - datetime
     /// </summary>
-    [Description("REGTIMESTAMP")]
+    [Column("REGTIMESTAMP")]
     public DateTime DataHoraRegistro { get; set; }
 
     /// <summary>
     /// REGCKTRANSF - char(1)
     /// </summary>
-    [Description("REGCKTRANSF")]
-    public string RegistroTransferido { get; set; }
+    [Column("REGCKTRANSF")]
+    public string? RegistroTransferido { get; set; }
 }

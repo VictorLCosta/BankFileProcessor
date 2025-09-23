@@ -3,49 +3,49 @@
 public class Debt : BaseEntity<ContractId>
 {
 
-    [Description("CODFILIAL")]
+    [Column("CODFILIAL")]
     public int CodigoFilial { get; set; }
 
-    [Description("DATCHEGBODERDIV")]
+    [Column("DATCHEGBODERDIV")]
     public DateTime DataDirecionamentoContrato { get; set; }
 
-    [Description("DATDEVDIV")]
+    [Column("DATDEVDIV")]
     public DateTime? DataDevolucaoDivida { get; set; }
 
-    [Description("CODINDFIN")]
+    [Column("CODINDFIN")]
     public CodigoIndiceFinanceiro CodigoIndiceFinanceiro { get; set; }
 
-    [Description("NUMPARCPLANODIV")]
+    [Column("NUMPARCPLANODIV")]
     public int NumParcPlanoDivida { get; set; }
 
-    [Description("VLRSALDHISTPLDIV")]
+    [Column("VLRSALDHISTPLDIV")]
     public decimal ValorSaldoDivida { get; set; }
 
-    [Description("VLRCPDIARIADIV")]
+    [Column("VLRCPDIARIADIV")]
     public decimal ValorDiaria { get; set; }
 
-    [Description("TAXFINCONTRDIV")]
+    [Column("TAXFINCONTRDIV")]
     public decimal TaxaFinanciamentoContrato { get; set; }
 
-    [Description("CODAGENCIADIV")]
+    [Column("CODAGENCIADIV")]
     public string? CodigoAgencia { get; set; }
 
-    [Description("STAFASECOBRDIV")]
+    [Column("STAFASECOBRDIV")]
     public string FaseDivida { get; set; } = string.Empty;
 
     private string? _nomeConcAgenDiv;
-    [Description("NOMCONCAGENDIV")]
+    [Column("NOMCONCAGENDIV")]
     public string? NomeConcAgenDiv
     {
         get => _nomeConcAgenDiv;
         set => _nomeConcAgenDiv = value?.Substring(0, Math.Min(35, value.Length));
     }
 
-    [Description("NUMCARTCOBDIV")]
+    [Column("NUMCARTCOBDIV")]
     public long NumeroCarteiraCobranca { get; set; }
 
     private string? _codigoProduto;
-    [Description("CODPRODCONTRDIV")]
+    [Column("CODPRODCONTRDIV")]
     public string? CodigoProduto
     {
         get => _codigoProduto;
@@ -53,7 +53,7 @@ public class Debt : BaseEntity<ContractId>
     }
 
     private string? _descricaoProduto;
-    [Description("DCRPRODCONTRDIV")]
+    [Column("DCRPRODCONTRDIV")]
     public string? DescricaoProduto
     {
         get => _descricaoProduto;
@@ -61,7 +61,7 @@ public class Debt : BaseEntity<ContractId>
     }
 
     private string? _descricaoSeguroProtecao;
-    [Description("DCRSEGPROTDIV")]
+    [Column("DCRSEGPROTDIV")]
     public string? DescricaoSeguroProtecao
     {
         get => _descricaoSeguroProtecao;
@@ -69,158 +69,158 @@ public class Debt : BaseEntity<ContractId>
     }
 
     private string? _infComplDivida;
-    [Description("INFCOMPLDIV")]
+    [Column("INFCOMPLDIV")]
     public string? InfComplDivida
     {
         get => _infComplDivida;
         set => _infComplDivida = value?[..Math.Min(250, value.Length)];
     }
 
-    [Description("SITDIVCOB")]
+    [Column("SITDIVCOB")]
     public SituacaoDividaCobranca SituacaoDividaCobranca { get; set; }
 
-    [Description("SITCONTRDIVADV")]
+    [Column("SITCONTRDIVADV")]
     public SituacaoContratoAdversa SituacaoContratoAdversa { get; set; }
 
-    [Description("SITCOBDIV")]
+    [Column("SITCOBDIV")]
     public OrigemCobrancaDivida OrigemCobrancaDivida { get; set; }
 
-    [Description("CODCAMPANHA")]
+    [Column("CODCAMPANHA")]
     public int CodigoCampanha { get; set; }
 
-    [Description("CODSCRIPTCOB")]
+    [Column("CODSCRIPTCOB")]
     public int? CodigoScriptCobranca { get; set; }
 
-    [Description("CODUSERID")]
+    [Column("CODUSERID")]
     public string? CodigoUsuario { get; set; }
 
-    [Description("DATULTCOBDIV")]
+    [Column("DATULTCOBDIV")]
     public DateTime? DataUltimaCobranca { get; set; }
 
-    [Description("DATAGENCOBR")]
+    [Column("DATAGENCOBR")]
     public DateTime? DataAgendamentoCobranca { get; set; }
 
-    [Description("SITACERTDIV")]
+    [Column("SITACERTDIV")]
     public string? SituacaoAcertoDivida { get; set; } = string.Empty;
 
-    [Description("DATCADDIV")]
+    [Column("DATCADDIV")]
     public DateTime DataCadastroDivida { get; set; }
 
-    [Description("DATREMARQ")]
+    [Column("DATREMARQ")]
     public DateTime DataRemessa { get; set; }
 
-    [Description("DATATUALREG")]
+    [Column("DATATUALREG")]
     public DateTime? DataAtualizacaoRegistro { get; set; }
 
-    [Description("SITREFCONTRDIV")]
+    [Column("SITREFCONTRDIV")]
     public string? SitReferenciaContrato { get; set; } = string.Empty;
 
-    [Description("TIPCONTR")]
+    [Column("TIPCONTR")]
     public string? TipoContrato { get; set; }
 
-    [Description("DATCONTRDIV")]
+    [Column("DATCONTRDIV")]
     public DateTime? DatContrDivida { get; set; }
 
-    [Description("DATENQRDIV")]
+    [Column("DATENQRDIV")]
     public DateTime? DataEnquadramento { get; set; }
 
-    [Description("TIPCOBRDIV")]
+    [Column("TIPCOBRDIV")]
     public string? TipoCobranca { get; set; }
 
-    [Description("DATPERFCOBRDIV")]
+    [Column("DATPERFCOBRDIV")]
     public DateTime? DataPerformance { get; set; }
 
-    [Description("FASCOBRDIV")]
+    [Column("FASCOBRDIV")]
     public int ReguaCobranca { get; set; }
 
-    [Description("SITCONTRDIVTERC")]
+    [Column("SITCONTRDIVTERC")]
     public string? SitContratoDividaTerceiro { get; set; }
 
-    [Description("SITBLOQAJUIZ")]
+    [Column("SITBLOQAJUIZ")]
     public string? SituacaoBloqueioAjuizamento { get; set; }
 
-    [Description("CODCLASSPDDDIV")]
+    [Column("CODCLASSPDDDIV")]
     public string CodigoClassificacaoPdd { get; set; } = string.Empty;
 
-    [Description("CODCARTCOBR")]
+    [Column("CODCARTCOBR")]
     public string? CodigoCarteiraCobranca { get; set; }
 
-    [Description("VLRRISCOCONTRDIV")]
+    [Column("VLRRISCOCONTRDIV")]
     public decimal? ValorRiscoContrato { get; set; }
 
-    [Description("VLRPERCPLPG")]
+    [Column("VLRPERCPLPG")]
     public decimal? ValorPercentualPlanoPag { get; set; }
 
-    [Description("CODINSTRCOBR")]
+    [Column("CODINSTRCOBR")]
     public long? CodigoInstrucaoCobranca { get; set; }
 
-    [Description("CODAREACOBRDIV")]
+    [Column("CODAREACOBRDIV")]
     public int? CodigoAreaCobranca { get; set; }
 
-    [Description("CODFASECOBRDIV")]
+    [Column("CODFASECOBRDIV")]
     public int? CodigoFaseCobranca { get; set; }
 
     private string? _tipoOperacaoContrato;
-    [Description("TIPOPRCONTRDIV")]
+    [Column("TIPOPRCONTRDIV")]
     public string? TipoOperacaoContrato
     {
         get => _tipoOperacaoContrato;
         set => _tipoOperacaoContrato = value?[..Math.Min(50, value.Length)];
     }
 
-    [Description("CODMOTIVINAD")]
+    [Column("CODMOTIVINAD")]
     public short? CodigoMotivoInadimplencia { get; set; }
 
     private string? _tipoOperacaoCobranca;
-    [Description("TIPOPRCOBR")]
+    [Column("TIPOPRCOBR")]
     public string? TipoOperacaoCobranca
     {
         get => _tipoOperacaoCobranca;
         set => _tipoOperacaoCobranca = value?[..Math.Min(15, value.Length)];
     }
 
-    [Description("CODDIALING")]
+    [Column("CODDIALING")]
     public long? CodigoDialing { get; set; }
 
-    [Description("TIPVINCCONTRDIV")]
+    [Column("TIPVINCCONTRDIV")]
     public string? TipoVinculoContrato { get; set; }
 
-    [Description("NUMCONTRDIVVINC")]
+    [Column("NUMCONTRDIVVINC")]
     public string? NumeroContratoVinculado { get; set; }
 
-    [Description("QTDVINCCONTRDIV")]
+    [Column("QTDVINCCONTRDIV")]
     public short? QuantidadeContratoVinculado { get; set; }
 
-    [Description("STATELHIGCONTRDIV")]
+    [Column("STATELHIGCONTRDIV")]
     public string? StatusTelefoneHigienizado { get; set; }
 
-    [Description("NUMCONTRCOBDIV")]
+    [Column("NUMCONTRCOBDIV")]
     public long NumeroContratoCobranca { get; set; }
 
-    [Description("TIPODIVIDA")]
+    [Column("TIPODIVIDA")]
     public char TipoDivida { get; set; }
 
-    [Description("CODESTRATEG")]
+    [Column("CODESTRATEG")]
     public int? CodigoEstrategia { get; set; }
 
-    [Description("SCOREDIVCOBR")]
+    [Column("SCOREDIVCOBR")]
     public long? ScoreDivida { get; set; }
 
-    [Description("SITINFBXPASTABCO")]
+    [Column("SITINFBXPASTABCO")]
     public string? SitInfoBaixaPastaBanco { get; set; }
 
-    [Description("CODEMPRECOLG")]
+    [Column("CODEMPRECOLG")]
     public CodigoColigada? CodigoColigada { get; set; }
 
-    [Description("SITRECLSAC")]
+    [Column("SITRECLSAC")]
     public string? SituacaoReclamacaoSac { get; set; }
 
-    [Description("SCORECONTR")]
+    [Column("SCORECONTR")]
     public string? ScoreContratante { get; set; }
 
-    [Description("REGTIMESTAMP")]
+    [Column("REGTIMESTAMP")]
     public DateTime DataHoraRegistro { get; set; }
 
-    [Description("REGCKTRANSF")]
+    [Column("REGCKTRANSF")]
     public string? RegistroTransferido { get; set; }
 }

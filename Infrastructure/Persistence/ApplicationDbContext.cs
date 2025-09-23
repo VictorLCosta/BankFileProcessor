@@ -22,6 +22,12 @@ internal class ApplicationDbContext(IMultiTenantContextAccessor<ApplicationTenan
 
     public DbSet<Phone> Phones => Set<Phone>();
 
+    public DbSet<InstitutionProfile> InstitutionProfiles => Set<InstitutionProfile>();
+
+    public DbSet<ProcessingRoutine> ProcessingRoutines => Set<ProcessingRoutine>();
+
+    public DbSet<Scheduling> Schedulings => Set<Scheduling>();
+
     async Task<int> IApplicationDbContext.SaveChangesAsync(CancellationToken cancellationToken)
     {
         return await base.SaveChangesAsync(cancellationToken);

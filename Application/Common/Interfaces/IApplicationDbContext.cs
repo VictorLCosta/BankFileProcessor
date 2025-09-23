@@ -10,7 +10,10 @@ public interface IApplicationDbContext
     DbSet<Debt> Debts { get; }
     DbSet<Email> Emails { get; }
     DbSet<Installment> Installments { get; }
+    DbSet<InstitutionProfile> InstitutionProfiles { get; }
     DbSet<Phone> Phones { get; }
+    DbSet<ProcessingRoutine> ProcessingRoutines { get; }
+    DbSet<Scheduling> Schedulings { get; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

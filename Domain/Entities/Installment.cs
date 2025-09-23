@@ -4,169 +4,169 @@ namespace Domain.Entities;
 
 public class Installment : BaseEntity<ContractId>
 {
-    [Description("NUMPARC")]
+    [Column("NUMPARC")]
     public int NumeroParcela { get; set; }
 
     /// <summary>
     /// TIPPARC - numeric(2,0) - not null
     /// </summary>
-    [Description("TIPPARC")]
+    [Column("TIPPARC")]
     public TipoParcela TipoParcela { get; set; }
 
     /// <summary>
     /// SITPARC - numeric(2,0) - not null
     /// </summary>
-    [Description("SITPARC")]
+    [Column("SITPARC")]
     public SituacaoParcela SituacaoParcela { get; set; }
 
     /// <summary>
     /// DATVCTOPARC - datetime - not null
     /// </summary>
-    [Description("DATVCTOPARC")]
+    [Column("DATVCTOPARC")]
     public DateTime DataVencimentoParcela { get; set; }
 
     /// <summary>
     /// VLRPRINCPARC - numeric(19,6) - not null
     /// </summary>
-    [Description("VLRPRINCPARC")]
+    [Column("VLRPRINCPARC")]
     public decimal ValorPrincipalParcela { get; set; }
 
     /// <summary>
     /// VLRMULTAPARC - numeric(19,6) - not null
     /// </summary>
-    [Description("VLRMULTAPARC")]
+    [Column("VLRMULTAPARC")]
     public decimal ValorMultaParcela { get; set; }
 
     /// <summary>
     /// VLRCPPARC - numeric(19,6) - not null
     /// </summary>
-    [Description("VLRCPPARC")]
+    [Column("VLRCPPARC")]
     public decimal ValorCpParcela { get; set; }
 
     /// <summary>
     /// VLRMORAPARC - numeric(19,6) - not null
     /// </summary>
-    [Description("VLRMORAPARC")]
+    [Column("VLRMORAPARC")]
     public decimal ValorMoraParcela { get; set; }
 
     /// <summary>
     /// CODPARC - numeric(10,0) - not null
     /// </summary>
-    [Description("CODPARC")]
+    [Column("CODPARC")]
     public long CodigoParcela { get; set; }
 
     /// <summary>
     /// NUMDOCPARC - numeric(12,0) - not null
     /// </summary>
-    [Description("NUMDOCPARC")]
+    [Column("NUMDOCPARC")]
     public long NumeroDocParcela { get; set; }
 
     /// <summary>
     /// TIPCADPARC - char(1) - not null
     /// </summary>
-    [Description("TIPCADPARC")]
+    [Column("TIPCADPARC")]
     public TipoCadastroParcela TipoCadastroParcela { get; set; }
 
     /// <summary>
     /// VLRDESPPARC - numeric(19,6) - not null
     /// </summary>
-    [Description("VLRDESPPARC")]
+    [Column("VLRDESPPARC")]
     public decimal ValorDespesaParcela { get; set; }
 
     /// <summary>
     /// DATREMARQ - datetime
     /// </summary>
-    [Description("DATREMARQ")]
+    [Column("DATREMARQ")]
     public DateTime DataRemessa { get; set; }
 
     /// <summary>
     /// NUMLOTPARC - numeric(12,0) - not null
     /// </summary>
-    [Description("NUMLOTPARC")]
+    [Column("NUMLOTPARC")]
     public long NumeroLoteParcela { get; set; }
 
     /// <summary>
     /// DATCHEGBODERPARC - datetime - not null
     /// </summary>
-    [Description("DATCHEGBODERPARC")]
+    [Column("DATCHEGBODERPARC")]
     public DateTime DataDirecionamento { get; set; }
 
     /// <summary>
     /// CODINDFIN - numeric(3,0) - not null
     /// </summary>
-    [Description("CODINDFIN")]
+    [Column("CODINDFIN")]
     public int CodigoIndiceFinanceiro { get; set; }
 
     /// <summary>
     /// FASCOBRDIV - numeric(5,0) - not null
     /// </summary>
-    [Description("FASCOBRDIV")]
+    [Column("FASCOBRDIV")]
     public int ReguaParcela { get; set; }
 
     /// <summary>
     /// SITBOLPARC - char(1) - not null
     /// </summary>
-    [Description("SITBOLPARC")]
+    [Column("SITBOLPARC")]
     public SituacaoBoletoParcela SituacaoBoletoParcela { get; set; }
 
     /// <summary>
     /// SITBLOQPARC - char(1) - not null
     /// </summary>
-    [Description("SITBLOQPARC")]
+    [Column("SITBLOQPARC")]
     public SituacaoParcelaBloqueada SituacaoParcelaBloqueada { get; set; }
 
     /// <summary>
     /// PERCVENCPARC - numeric(9,6) - not null
     /// </summary>
-    [Description("PERCVENCPARC")]
+    [Column("PERCVENCPARC")]
     public decimal PercentualVencimentoParcela { get; set; }
 
     /// <summary>
     /// DATVCTORGPARC - datetime
     /// </summary>
-    [Description("DATVCTORGPARC")]
+    [Column("DATVCTORGPARC")]
     public DateTime? DataEnquadramento { get; set; }
 
     /// <summary>
     /// SITFORVCTOPARC - char(1) - not null
     /// </summary>
-    [Description("SITFORVCTOPARC")]
+    [Column("SITFORVCTOPARC")]
     public SituacaoCalculoVencimento SituacaoCalculoVencimento { get; set; }
 
     /// <summary>
     /// TIPBXPARC - char(2)
     /// </summary>
-    [Description("TIPBXPARC")]
+    [Column("TIPBXPARC")]
     public TipoBaixaParcela TipoBaixa { get; set; }
 
     /// <summary>
     /// DATBXPARC - datetime
     /// </summary>
-    [Description("DATBXPARC")]
+    [Column("DATBXPARC")]
     public DateTime? DataBaixa { get; set; }
 
     /// <summary>
     /// DATPGTOPARC - datetime
     /// </summary>
-    [Description("DATPGTOPARC")]
+    [Column("DATPGTOPARC")]
     public DateTime? DataPagamento { get; set; }
 
     /// <summary>
     /// DATDEVPARC - datetime
     /// </summary>
-    [Description("DATDEVPARC")]
+    [Column("DATDEVPARC")]
     public DateTime? DataDevolucao { get; set; }
 
     /// <summary>
     /// SLDPARC - money
     /// </summary>
-    [Description("SLDPARC")]
+    [Column("SLDPARC")]
     public decimal SaldoParcela { get; set; }
 
     /// <summary>
     /// TIPMOEDAPARC - varchar(50)
     /// </summary>
-    [Description("TIPMOEDAPARC")]
+    [Column("TIPMOEDAPARC")]
     public string? TipoMoeda
     {
         get
@@ -183,7 +183,7 @@ public class Installment : BaseEntity<ContractId>
     /// <summary>
     /// TIPAPPLPARC  - varchar(5)
     /// </summary>
-    [Description("TIPAPPLPARC")]
+    [Column("TIPAPPLPARC")]
     public string? TipoAplicacaoParcela
     {
         get
@@ -200,55 +200,55 @@ public class Installment : BaseEntity<ContractId>
     /// <summary>
     /// DATATUALREG - datetime
     /// </summary>
-    [Description("DATATUALREG")]
+    [Column("DATATUALREG")]
     public DateTime DataAtualizacaoRegistro { get; set; }
 
     /// <summary>
     /// DATCADPARC - datetime
     /// </summary>
-    [Description("DATCADPARC")]
+    [Column("DATCADPARC")]
     public DateTime DataCadastro { get; set; }
 
     /// <summary>
     /// NUMPARCORIGINAL  - NUMERIC(3, 0)
     /// </summary>
     /// <value></value>
-    [Description("NUMPARCORIGINAL")]
+    [Column("NUMPARCORIGINAL")]
     public int? NumeroParcelaOriginal { get; set; }
 
     /// <summary>
     /// DATNOTIFPARC
     /// </summary>
-    [Description("DATNOTIFPARC")]
+    [Column("DATNOTIFPARC")]
     public DateTime? DataNotificacaoParcela { get; set; }
 
     /// <summary>
     /// CODFASCONTBPARC
     /// </summary>
-    [Description("CODFASCONTBPARC")]
+    [Column("CODFASCONTBPARC")]
     public string? CodigoFaseContratoParcela { get; set; }
 
     /// <summary>
     /// SITCONTRAJUIZ
     /// </summary>
-    [Description("SITCONTRAJUIZ")]
+    [Column("SITCONTRAJUIZ")]
     public string? SituacaoContratoAjuizado { get; set; }
 
     /// <summary>
     /// SCOREDIVCOBR
     /// </summary>
-    [Description("SCOREDIVCOBR")]
+    [Column("SCOREDIVCOBR")]
     public long ScoreDivida { get; set; }
 
     /// <summary>
     /// REGTIMESTAMP - datetime
     /// </summary>
-    [Description("REGTIMESTAMP")]
+    [Column("REGTIMESTAMP")]
     public DateTime DataHoraRegistro { get; set; }
 
     /// <summary>
     /// REGCKTRANSF - char(1)
     /// </summary>
-    [Description("REGCKTRANSF")]
+    [Column("REGCKTRANSF")]
     public string? RegistroTransferido { get; set; }
 }

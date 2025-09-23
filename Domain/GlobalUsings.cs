@@ -2,3 +2,4 @@
 global using Domain.Enums;
 global using Domain.ValueObjects;
 global using System.ComponentModel;
+global using System.ComponentModel.DataAnnotations.Schema;
