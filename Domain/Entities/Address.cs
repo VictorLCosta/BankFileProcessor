@@ -5,6 +5,7 @@ public class Address : BaseEntity<ContractId>
     /// <summary>
     /// CODCPFCNPJCLI - numeric(14,0) - not null
     /// </summary>
+    [Column("CODCPFCNPJCLI")]
     public long CpfCnpj { get; set; }
 
     private string? _logradouro;
