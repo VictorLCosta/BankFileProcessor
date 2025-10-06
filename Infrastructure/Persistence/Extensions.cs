@@ -5,7 +5,7 @@ namespace Infrastructure.Persistence;
 
 internal static class Extensions
 {
-    private static DbContextOptionsBuilder ConfigureDatabase(this DbContextOptionsBuilder builder, string dbProvider, string connectionString) 
+    internal static DbContextOptionsBuilder ConfigureDatabase(this DbContextOptionsBuilder builder, string dbProvider, string connectionString) 
     {
         return dbProvider.ToUpperInvariant() switch
         {

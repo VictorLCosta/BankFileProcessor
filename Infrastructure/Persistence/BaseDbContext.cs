@@ -20,11 +20,19 @@ internal abstract class BaseDbContext(
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.EnableSensitiveDataLogging();
-        base.OnConfiguring(optionsBuilder);
+        
+        if (!string.IsNullOrWhiteSpace(accessor.MultiTenantContext?.TenantInfo?.ConnectionString)) 
+        {
+            optionsBuilder.ConfigureDatabase(
+                accessor.MultiTenantContext.TenantInfo.DbProvider, 
+                accessor.MultiTenantContext.TenantInfo.ConnectionString!
+            );
+        }
     }
 
-    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        return base.SaveChangesAsync(cancellationToken);
+        TenantNotSetMode = TenantNotSetMode.Overwrite;
+        return await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
     }
 }
