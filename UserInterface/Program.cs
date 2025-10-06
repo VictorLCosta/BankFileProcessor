@@ -1,13 +1,12 @@
-using Microsoft.Extensions.Hosting;
-using WindowsFormsLifetime;
-
 using Infrastructure;
-using UserInterface;
+using Microsoft.Extensions.Hosting;
+using UserInterface.Forms;
+using WindowsFormsLifetime;
 
 var builder = Host.CreateApplicationBuilder(args);
 builder.UseWindowsFormsLifetime<MainWindow>();
 
-builder.AddInfratructure(builder.Configuration);
+await builder.AddInfrastructure();
 
 var app = builder.Build();
 await app.RunAsync();

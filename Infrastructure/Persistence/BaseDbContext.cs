@@ -1,13 +1,12 @@
 ﻿using Finbuckle.MultiTenant.Abstractions;
 using Finbuckle.MultiTenant.EntityFrameworkCore;
 using Infrastructure.Tenant;
-using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace Infrastructure.Persistence;
 
 internal abstract class BaseDbContext(
-    IMultiTenantContextAccessor<ApplicationTenantInfo> accessor, 
+    IMultiTenantContextAccessor<ApplicationTenantInfo> accessor,
     DbContextOptions options
 ) 
     : MultiTenantDbContext(accessor, options)
@@ -26,7 +25,6 @@ internal abstract class BaseDbContext(
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        this.TenantNotSetMode = TenantNotSetMode.Overwrite;
         return base.SaveChangesAsync(cancellationToken);
     }
 }

@@ -1,11 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Tenant\TenantInitializer.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
@@ -13,16 +16,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Persistence\Configurations\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Finbuckle.MultiTenant" Version="8.1.7" />
-    <PackageReference Include="Finbuckle.MultiTenant.EntityFrameworkCore" Version="8.1.7" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.20" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
-    <PackageReference Include="Oracle.EntityFrameworkCore" Version="8.23.90" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.3" />
+    <PackageReference Include="AsyncAwaitBestPractices" Version="9.0.0" />
+    <PackageReference Include="Finbuckle.MultiTenant" Version="9.4.0" />
+    <PackageReference Include="Finbuckle.MultiTenant.EntityFrameworkCore" Version="9.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.9" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="9.23.90" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
   </ItemGroup>
 
 </Project>

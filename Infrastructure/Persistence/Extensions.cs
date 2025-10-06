@@ -1,6 +1,5 @@
 ﻿using Finbuckle.MultiTenant.Abstractions;
 using Infrastructure.Tenant;
-using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence;
 
@@ -18,15 +17,15 @@ internal static class Extensions
         };
     }
 
-    public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
+    public static async Task<IServiceCollection> AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
         using var serviceProvider = services.BuildServiceProvider();
 
+        var store = serviceProvider.GetRequiredService<IMultiTenantStore<ApplicationTenantInfo>>();
+        var tenant = await store.TryGetByIdentifierAsync("santander-varejo");
+
         services.AddDbContext<ApplicationDbContext>((options) =>
         {
-            var accessor = serviceProvider.GetRequiredService<IMultiTenantContextAccessor<ApplicationTenantInfo>>();
-            var tenant = accessor.MultiTenantContext?.TenantInfo;
-
             var connectionString = tenant?.ConnectionString ?? configuration.GetConnectionString("DefaultConnection")!;
             var dbProvider = tenant?.DbProvider ?? DbProviders.MSSQL;
 

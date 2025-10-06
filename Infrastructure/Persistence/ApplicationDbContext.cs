@@ -1,12 +1,10 @@
 ﻿using Domain.Entities;
 using Finbuckle.MultiTenant.Abstractions;
 using Infrastructure.Tenant;
-using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence;
 
-internal class ApplicationDbContext(IMultiTenantContextAccessor<ApplicationTenantInfo> accessor,
-    DbContextOptions options) : BaseDbContext(accessor, options), IApplicationDbContext
+internal class ApplicationDbContext(IMultiTenantContextAccessor<ApplicationTenantInfo> accessor, DbContextOptions options) : BaseDbContext(accessor, options), IApplicationDbContext
 {
     public DbSet<Address> Addresses => Set<Address>();
 

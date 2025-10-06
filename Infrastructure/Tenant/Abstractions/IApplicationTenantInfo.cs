@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Tenant.Abstractions;
 
-internal interface IApplicationTenantInfo : ITenantInfo
+public interface IApplicationTenantInfo : ITenantInfo
 {
     string ConnectionString { get; set; }
     string DbProvider { get; set; }

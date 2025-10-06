@@ -6,11 +6,12 @@ namespace Infrastructure;
 
 public static class Extensions
 {
-    public static HostApplicationBuilder AddInfratructure(this HostApplicationBuilder builder, IConfiguration configuration)
+    public static async Task<HostApplicationBuilder> AddInfrastructure(this HostApplicationBuilder builder)
     {
         builder.Services.AddMultitenancy();
-        builder.Services.AddPersistence(configuration);
+        await builder.Services.AddPersistence(builder.Configuration);
 
         return builder;
     }
+
 }
