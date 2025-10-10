@@ -1,6 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
+	<PropertyGroup>
+		<RootNamespace>Migrations.PostgreSQL</RootNamespace>
+		<AssemblyName>Migrations.PostgreSQL</AssemblyName>
+	</PropertyGroup>
+
+	<PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>

@@ -1,4 +1,4 @@
-﻿namespace MSSQL;
+﻿namespace Migrations.MSSQL;
 
 public class Marker { }
 

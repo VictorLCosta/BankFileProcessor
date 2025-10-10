@@ -11,6 +11,7 @@ internal abstract class BaseDbContext(
 ) 
     : MultiTenantDbContext(accessor, options)
 {
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

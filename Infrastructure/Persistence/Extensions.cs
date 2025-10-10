@@ -9,10 +9,25 @@ internal static class Extensions
     {
         return dbProvider.ToUpperInvariant() switch
         {
-            DbProviders.MSSQL => builder.UseSqlServer(connectionString, options => options.EnableRetryOnFailure()),
-            DbProviders.Oracle => builder.UseOracle(connectionString),
-            DbProviders.PostgreSQL => builder.UseNpgsql(connectionString, options => options.EnableRetryOnFailure()),
-            DbProviders.MySQL => builder.UseMySql(ServerVersion.AutoDetect(connectionString), options => options.EnableRetryOnFailure()).EnableDetailedErrors(),
+            DbProviders.MSSQL => builder.UseSqlServer(connectionString, options => 
+            { 
+                options.EnableRetryOnFailure(); 
+                options.MigrationsAssembly("Migrations.MSSQL");
+            }).EnableDetailedErrors(),
+            DbProviders.Oracle => builder.UseOracle(connectionString, options =>
+            {
+                options.MigrationsAssembly("Migrations.Oracle");
+            }).EnableDetailedErrors(),
+            DbProviders.PostgreSQL => builder.UseNpgsql(connectionString, options =>
+            {
+                options.EnableRetryOnFailure();
+                options.MigrationsAssembly("Migrations.PostgreSQL");
+            }).EnableDetailedErrors(),
+            DbProviders.MySQL => builder.UseMySql(ServerVersion.AutoDetect(connectionString), options =>
+            {
+                options.EnableRetryOnFailure();
+                options.MigrationsAssembly("Migrations.MySQL");
+            }).EnableDetailedErrors(),
             _ => throw new InvalidOperationException($"DB Provider {dbProvider} is not supported."),
         };
     }
