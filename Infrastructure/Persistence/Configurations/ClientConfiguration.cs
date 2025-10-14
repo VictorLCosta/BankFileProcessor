@@ -11,14 +11,11 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
         builder
             .ToTable("CO001");
 
-        builder.ComplexProperty(x => x.Id, b =>
-        {
-            b.Property(bid => bid.CompanyCode)
-                .HasColumnName("CODEMPRESA");
+        builder
+            .HasKey(x => new { x.CodigoEmpresa, x.NumeroContrato });
 
-            b.Property(bid => bid.ContractNumber)
-                .HasColumnName("NUMCONTRDIV");
-        });
+        builder
+            .HasIndex(x => new { x.CodigoEmpresa, x.NumeroContrato, x.CpfCnpj });
 
         builder
             .HasIndex(x => x.CpfCnpj);

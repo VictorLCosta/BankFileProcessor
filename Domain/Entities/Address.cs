@@ -1,7 +1,8 @@
 ﻿namespace Domain.Entities;
 
-public class Address : BaseEntity<ContractId>
+public class Address : BaseChargeEntity
 {
+
     /// <summary>
     /// CODCPFCNPJCLI - numeric(14,0) - not null
     /// </summary>
@@ -108,9 +109,6 @@ public class Address : BaseEntity<ContractId>
 
     [Column("SITPRIORENDCOBR")]
     public int SituacaoPrioridadeEndereco { get; set; }
-
-    [Column("REGTIMESTAMP")]
-    public DateTime DataHoraRegistro { get; set; }
 
     [Column("REGCKTRANSF")]
     public string? RegistroTransferido { get; set; }

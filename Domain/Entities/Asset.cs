@@ -2,7 +2,7 @@
 
 namespace Domain.Entities;
 
-public class Asset : BaseEntity<ContractId>
+public class Asset : BaseChargeEntity
 {
     /// <summary>
     /// [DCRBEM] [varchar](50)
@@ -157,12 +157,6 @@ public class Asset : BaseEntity<ContractId>
     /// </summary>
     [Column("VALORBEM")]
     public decimal? Valor { get; set; }
-
-    /// <summary>
-    /// [REGTIMESTAMP] [datetime]
-    /// </summary>
-    [Column("REGTIMESTAMP")]
-    public DateTime DataHoraRegistro { get; set; }
 
     /// <summary>
     /// [REGCKTRANSF] - char(1)

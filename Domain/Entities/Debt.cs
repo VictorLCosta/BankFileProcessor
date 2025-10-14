@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities;
 
-public class Debt : BaseEntity<ContractId>
+public class Debt : BaseChargeEntity
 {
 
     [Column("CODFILIAL")]
@@ -217,9 +217,6 @@ public class Debt : BaseEntity<ContractId>
 
     [Column("SCORECONTR")]
     public string? ScoreContratante { get; set; }
-
-    [Column("REGTIMESTAMP")]
-    public DateTime DataHoraRegistro { get; set; }
 
     [Column("REGCKTRANSF")]
     public string? RegistroTransferido { get; set; }

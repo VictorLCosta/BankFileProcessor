@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities;
 
-public class Client : BaseEntity<ContractId>
+public class Client : BaseChargeEntity
 {
     private string _nomeCliente = string.Empty;
     /// <summary>
@@ -244,12 +244,6 @@ public class Client : BaseEntity<ContractId>
     /// </summary>
     [Column("CODESTADOCIVIL")]
     public EstadoCivil? CodigoEstadoCivil { get; set; }
-
-    /// <summary>
-    /// REGTIMESTAMP - datetime
-    /// </summary>
-    [Column("REGTIMESTAMP")]
-    public DateTime DataHoraRegistro { get; set; }
 
     /// <summary>
     /// REGCKTRANSF - char(1)

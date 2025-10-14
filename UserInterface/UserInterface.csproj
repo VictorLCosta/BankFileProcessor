@@ -24,6 +24,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\Migrations\MSSQL\MSSQL.csproj" />
+    <ProjectReference Include="..\Migrations\Oracle\Oracle.csproj" />
+    <ProjectReference Include="..\Migrations\PostgreSQL\PostgreSQL.csproj" />
   </ItemGroup>
 
 </Project>

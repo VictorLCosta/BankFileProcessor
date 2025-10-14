@@ -11,17 +11,11 @@ public class DebtConfiguration : IEntityTypeConfiguration<Debt>
         builder
             .ToTable("CO002");
 
-        builder.ComplexProperty(x => x.Id, b =>
-        {
-            b.Property(bid => bid.CompanyCode)
-                .HasColumnName("CODEMPRESA");
-
-            b.Property(bid => bid.ContractNumber)
-                .HasColumnName("NUMCONTRDIV");
-        });
+        builder
+            .HasKey(x => new { x.CodigoEmpresa, x.NumeroContrato });
 
         builder
-            .HasIndex(x => new { x.SituacaoDividaCobranca, x.Id.CompanyCode, x.Id.ContractNumber });
+            .HasIndex(x => new { x.SituacaoDividaCobranca, x.CodigoEmpresa, x.NumeroContrato });
 
         builder
             .HasIndex(x => x.NumeroCarteiraCobranca);

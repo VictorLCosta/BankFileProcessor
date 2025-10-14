@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities;
 
-public class Email : BaseEntity<ContractId>
+public class Email : BaseChargeEntity
 {
     /// <summary>
     /// DCREMAIL - varchar(300) - not null
@@ -99,12 +99,6 @@ public class Email : BaseEntity<ContractId>
     /// </summary>
     [Column("DATREMARQ")]
     public DateTime DataRemessaArquivo { get; set; }
-
-    /// <summary>
-    /// REGTIMESTAMP - datetime
-    /// </summary>
-    [Column("REGTIMESTAMP")]
-    public DateTime DataHoraRegistro { get; set; }
 
     /// <summary>
     /// REGCKTRANSF - char(1)

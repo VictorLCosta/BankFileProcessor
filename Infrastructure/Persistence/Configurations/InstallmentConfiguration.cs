@@ -11,20 +11,14 @@ public class InstallmentConfiguration : IEntityTypeConfiguration<Installment>
         builder
             .ToTable("CO003");
 
-        builder.ComplexProperty(x => x.Id, b =>
-        {
-            b.Property(bid => bid.CompanyCode)
-                .HasColumnName("CODEMPRESA");
-
-            b.Property(bid => bid.ContractNumber)
-                .HasColumnName("NUMCONTRDIV");
-        });
+        builder
+            .HasKey(x => new { x.CodigoEmpresa, x.NumeroContrato });
 
         builder
             .HasIndex(x => x.SituacaoParcela);
 
         builder
-            .HasIndex(x => new { x.DataDirecionamento, x.Id.CompanyCode });
+            .HasIndex(x => new { x.DataDirecionamento, x.CodigoEmpresa });
 
         builder
             .HasIndex(x => x.ScoreDivida);

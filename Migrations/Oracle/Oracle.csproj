@@ -1,15 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<RootNamespace>Migrations.Oracle</RootNamespace>
-		<AssemblyName>Migrations.Oracle</AssemblyName>
-	</PropertyGroup>
-
-	<PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+		<RootNamespace>Migrations.Oracle</RootNamespace>
+		<AssemblyName>Migrations.Oracle</AssemblyName>
   </PropertyGroup>
+
+	<PropertyGroup>
+		<BaseOutputPath>..\..\Infrastructure\bin\</BaseOutputPath>
+	</PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\Infrastructure.csproj" />

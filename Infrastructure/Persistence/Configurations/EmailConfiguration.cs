@@ -11,16 +11,7 @@ public class EmailConfiguration : IEntityTypeConfiguration<Email>
         builder
             .ToTable("CO125");
 
-        builder.ComplexProperty(x => x.Id, b =>
-        {
-            b.Property(bid => bid.CompanyCode)
-                .HasColumnName("CODEMPRESA");
-
-            b.Property(bid => bid.ContractNumber)
-                .HasColumnName("NUMCONTRDIV");
-        });
-
         builder
-            .HasKey(x => new { x.Id, x.DescricaoEmail });
+            .HasKey(x => new { x.CodigoEmpresa, x.NumeroContrato, x.DescricaoEmail });
     }
 }

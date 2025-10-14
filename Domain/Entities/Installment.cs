@@ -2,7 +2,7 @@
 
 namespace Domain.Entities;
 
-public class Installment : BaseEntity<ContractId>
+public class Installment : BaseChargeEntity
 {
     [Column("NUMPARC")]
     public int NumeroParcela { get; set; }
@@ -239,12 +239,6 @@ public class Installment : BaseEntity<ContractId>
     /// </summary>
     [Column("SCOREDIVCOBR")]
     public long ScoreDivida { get; set; }
-
-    /// <summary>
-    /// REGTIMESTAMP - datetime
-    /// </summary>
-    [Column("REGTIMESTAMP")]
-    public DateTime DataHoraRegistro { get; set; }
 
     /// <summary>
     /// REGCKTRANSF - char(1)

@@ -2,7 +2,7 @@
 
 namespace Domain.Entities;
 
-public class Phone : BaseEntity<ContractId>
+public class Phone : BaseChargeEntity
 {
     public long Numero { get; set; }
 
@@ -116,12 +116,6 @@ public class Phone : BaseEntity<ContractId>
     /// </summary>
     [Column("NUMTELORIGINAL")]
     public string? NumeroOriginal { get; set; }
-
-    /// <summary>
-    /// [REGTIMESTAMP] [datetime] NULL
-    /// </summary>
-    [Column("REGTIMESTAMP")]
-    public DateTime? DataHoraRegistro { get; set; }
 
     /// <summary>
     /// [CODAREA] [varchar](10) NULL
