@@ -12,6 +12,18 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
             .ToTable("CO001");
 
         builder
+            .ComplexProperty(x => x.EnderecoCobranca)
+            .IsRequired();
+
+        builder
+            .ComplexProperty(x => x.EnderecoResidencial)
+            .IsRequired();
+
+        builder
+            .ComplexProperty(x => x.EnderecoComercial)
+            .IsRequired();
+
+        builder
             .HasKey(x => new { x.CodigoEmpresa, x.NumeroContrato });
 
         builder

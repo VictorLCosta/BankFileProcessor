@@ -4,7 +4,7 @@ using Infrastructure.Tenant;
 
 namespace Infrastructure.Persistence;
 
-internal class ApplicationDbContext(IMultiTenantContextAccessor<ApplicationTenantInfo> accessor, DbContextOptions options) : BaseDbContext(accessor, options), IApplicationDbContext
+public class ApplicationDbContext(IMultiTenantContextAccessor<ApplicationTenantInfo> accessor, DbContextOptions options) : BaseDbContext(accessor, options), IApplicationDbContext
 {
     public DbSet<Address> Addresses => Set<Address>();
 

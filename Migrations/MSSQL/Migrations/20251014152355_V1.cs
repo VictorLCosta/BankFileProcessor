@@ -12,6 +12,72 @@ namespace Migrations.MSSQL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "CO001",
+                columns: table => new
+                {
+                    CODEMPRESA = table.Column<int>(type: "int", nullable: false),
+                    NUMCONTRDIV = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    NOMCLI = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CODCPFCNPJCLI = table.Column<long>(type: "bigint", nullable: false),
+                    TIPPESSCLI = table.Column<int>(type: "int", nullable: false),
+                    CODCLIEMP = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DATNASCCLI = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    NUMRGIDENTCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NOMCONJUCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FILIACAOCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NUMTELRESCLI = table.Column<long>(type: "bigint", nullable: false),
+                    NUMTELCELCLI = table.Column<long>(type: "bigint", nullable: false),
+                    DCRLOCTRABCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NUMTELCOMCLI = table.Column<long>(type: "bigint", nullable: false),
+                    NUMFAXCOMCLI = table.Column<long>(type: "bigint", nullable: false),
+                    CODCORRESPCLI = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ENDEMAILCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NOMSOCCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NOMCONTCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DATCADCLI = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DATREMARQ = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DATATUALREG = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    NUMTELCONTCLI = table.Column<long>(type: "bigint", nullable: false),
+                    NUMTELCOBRCLI = table.Column<long>(type: "bigint", nullable: false),
+                    NUMRAMTELCOMCLI = table.Column<int>(type: "int", nullable: false),
+                    CODFILIAL = table.Column<int>(type: "int", nullable: true),
+                    TIPREGIMECASAMENTO = table.Column<string>(type: "nvarchar(1)", nullable: false),
+                    TIPSEXOCLI = table.Column<string>(type: "nvarchar(1)", nullable: false),
+                    CODESTADOCIVIL = table.Column<int>(type: "int", nullable: true),
+                    REGCKTRANSF = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DCRBAICLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CODCEPCLI = table.Column<int>(type: "int", nullable: false),
+                    DCRCIDCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CODCHAVEBANCO = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CODENDCOBR = table.Column<int>(type: "int", nullable: false),
+                    DCRCOMPLEMENTO = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DATCADENDCLI = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DATCANCENDCLI = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DATCONFENDCLI = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DATRETARQ = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DCRREFCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DCRENDCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NUMENDCLI = table.Column<int>(type: "int", nullable: true),
+                    OBSENDCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ORGENDCLI = table.Column<int>(type: "int", nullable: false),
+                    SITCONFENDCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SITBLOQCORRESPENDCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SITENDPRINC = table.Column<int>(type: "int", nullable: false),
+                    SITPRIORENDCOBR = table.Column<int>(type: "int", nullable: false),
+                    STAENDCLI = table.Column<int>(type: "int", nullable: false),
+                    TIPENDCLI = table.Column<int>(type: "int", nullable: false),
+                    CODUFCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CODUSERALTENDCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CODUSERCADCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CODUSERCANCENDCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    REGTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CO001", x => new { x.CODEMPRESA, x.NUMCONTRDIV });
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CO002",
                 columns: table => new
                 {
@@ -175,7 +241,7 @@ namespace Migrations.MSSQL.Migrations
                 {
                     CODEMPRESA = table.Column<int>(type: "int", nullable: false),
                     NUMCONTRDIV = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Numero = table.Column<long>(type: "bigint", nullable: false),
+                    NUMTELCOBR = table.Column<long>(type: "bigint", nullable: false),
                     CODTELCOBR = table.Column<int>(type: "int", nullable: false),
                     SITPRIORTELCOBR = table.Column<short>(type: "smallint", nullable: false),
                     OBSTELCOBR = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -199,7 +265,7 @@ namespace Migrations.MSSQL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CO090", x => new { x.CODEMPRESA, x.NUMCONTRDIV, x.Numero });
+                    table.PrimaryKey("PK_CO090", x => new { x.CODEMPRESA, x.NUMCONTRDIV, x.NUMTELCOBR });
                 });
 
             migrationBuilder.CreateTable(
@@ -215,7 +281,7 @@ namespace Migrations.MSSQL.Migrations
                     DCRBAICLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DCRCIDCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CODUFCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Cep = table.Column<int>(type: "int", nullable: false),
+                    CODCEPCLI = table.Column<int>(type: "int", nullable: false),
                     DCRREFCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TIPENDCLI = table.Column<int>(type: "int", nullable: false),
                     SITENDPRINC = table.Column<int>(type: "int", nullable: false),
@@ -275,108 +341,44 @@ namespace Migrations.MSSQL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "InstitutionProfiles",
+                name: "PR001",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    NUMPROC = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TIPPROC = table.Column<int>(type: "int", nullable: false),
                     DCRPROC = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DCRDIR = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModifiedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    REGTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    MODTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_InstitutionProfiles", x => x.Id);
+                    table.PrimaryKey("PK_PR001", x => x.NUMPROC);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Repetition",
+                name: "PR017",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    CODREPETICAO = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NOMREPETICAO = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DIASSEMANA = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     INTERVALO = table.Column<TimeSpan>(type: "time", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModifiedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    REGTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    MODTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Repetition", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CO001",
-                columns: table => new
-                {
-                    CODEMPRESA = table.Column<int>(type: "int", nullable: false),
-                    NUMCONTRDIV = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    NOMCLI = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CODCPFCNPJCLI = table.Column<long>(type: "bigint", nullable: false),
-                    TIPPESSCLI = table.Column<int>(type: "int", nullable: false),
-                    CODCLIEMP = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DATNASCCLI = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    NUMRGIDENTCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NOMCONJUCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FILIACAOCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EnderecoResidencialCodigoEmpresa = table.Column<int>(type: "int", nullable: true),
-                    EnderecoResidencialNumeroContrato = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    NUMTELRESCLI = table.Column<long>(type: "bigint", nullable: false),
-                    NUMTELCELCLI = table.Column<long>(type: "bigint", nullable: false),
-                    DCRLOCTRABCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EnderecoComercialCodigoEmpresa = table.Column<int>(type: "int", nullable: true),
-                    EnderecoComercialNumeroContrato = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    NUMTELCOMCLI = table.Column<long>(type: "bigint", nullable: false),
-                    NUMFAXCOMCLI = table.Column<long>(type: "bigint", nullable: false),
-                    CODCORRESPCLI = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ENDEMAILCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NOMSOCCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NOMCONTCLI = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DATCADCLI = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DATREMARQ = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DATATUALREG = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    NUMTELCONTCLI = table.Column<long>(type: "bigint", nullable: false),
-                    NUMTELCOBRCLI = table.Column<long>(type: "bigint", nullable: false),
-                    NUMRAMTELCOMCLI = table.Column<int>(type: "int", nullable: false),
-                    CODFILIAL = table.Column<int>(type: "int", nullable: true),
-                    EnderecoCobrancaCodigoEmpresa = table.Column<int>(type: "int", nullable: true),
-                    EnderecoCobrancaNumeroContrato = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    TIPREGIMECASAMENTO = table.Column<string>(type: "nvarchar(1)", nullable: false),
-                    TIPSEXOCLI = table.Column<string>(type: "nvarchar(1)", nullable: false),
-                    CODESTADOCIVIL = table.Column<int>(type: "int", nullable: true),
-                    REGCKTRANSF = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    REGTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CO001", x => new { x.CODEMPRESA, x.NUMCONTRDIV });
-                    table.ForeignKey(
-                        name: "FK_CO001_CO092_EnderecoCobrancaCodigoEmpresa_EnderecoCobrancaNumeroContrato",
-                        columns: x => new { x.EnderecoCobrancaCodigoEmpresa, x.EnderecoCobrancaNumeroContrato },
-                        principalTable: "CO092",
-                        principalColumns: new[] { "CODEMPRESA", "NUMCONTRDIV" });
-                    table.ForeignKey(
-                        name: "FK_CO001_CO092_EnderecoComercialCodigoEmpresa_EnderecoComercialNumeroContrato",
-                        columns: x => new { x.EnderecoComercialCodigoEmpresa, x.EnderecoComercialNumeroContrato },
-                        principalTable: "CO092",
-                        principalColumns: new[] { "CODEMPRESA", "NUMCONTRDIV" });
-                    table.ForeignKey(
-                        name: "FK_CO001_CO092_EnderecoResidencialCodigoEmpresa_EnderecoResidencialNumeroContrato",
-                        columns: x => new { x.EnderecoResidencialCodigoEmpresa, x.EnderecoResidencialNumeroContrato },
-                        principalTable: "CO092",
-                        principalColumns: new[] { "CODEMPRESA", "NUMCONTRDIV" });
+                    table.PrimaryKey("PK_PR017", x => x.CODREPETICAO);
                 });
 
             migrationBuilder.CreateTable(
                 name: "PR018",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    IDAGENDA = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     HORAINIAGENDA = table.Column<TimeOnly>(type: "time", nullable: false),
                     HORAFIMAGENDA = table.Column<TimeOnly>(type: "time", nullable: true),
@@ -385,18 +387,17 @@ namespace Migrations.MSSQL.Migrations
                     REPETIRPROCESSO = table.Column<bool>(type: "bit", nullable: false),
                     DATAULTVERIFICACAO = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CODREPETICAO = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModifiedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    REGTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    MODTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PR018", x => x.Id);
+                    table.PrimaryKey("PK_PR018", x => x.IDAGENDA);
                     table.ForeignKey(
-                        name: "FK_PR018_Repetition_CODREPETICAO",
+                        name: "FK_PR018_PR017_CODREPETICAO",
                         column: x => x.CODREPETICAO,
-                        principalTable: "Repetition",
-                        principalColumn: "Id",
+                        principalTable: "PR017",
+                        principalColumn: "CODREPETICAO",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -404,7 +405,7 @@ namespace Migrations.MSSQL.Migrations
                 name: "PR012",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    CODDESC = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ARQDESC = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     STAPROC = table.Column<bool>(type: "bit", nullable: false),
@@ -414,47 +415,47 @@ namespace Migrations.MSSQL.Migrations
                     SITFOOTER = table.Column<bool>(type: "bit", nullable: false),
                     NUMPROC = table.Column<int>(type: "int", nullable: false),
                     SchedulingId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModifiedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    REGTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    MODTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PR012", x => x.Id);
+                    table.PrimaryKey("PK_PR012", x => x.CODDESC);
                     table.ForeignKey(
-                        name: "FK_PR012_InstitutionProfiles_NUMPROC",
+                        name: "FK_PR012_PR001_NUMPROC",
                         column: x => x.NUMPROC,
-                        principalTable: "InstitutionProfiles",
-                        principalColumn: "Id",
+                        principalTable: "PR001",
+                        principalColumn: "NUMPROC",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_PR012_PR018_SchedulingId",
                         column: x => x.SchedulingId,
                         principalTable: "PR018",
-                        principalColumn: "Id");
+                        principalColumn: "IDAGENDA");
                 });
 
             migrationBuilder.CreateTable(
-                name: "FilePattern",
+                name: "PR030",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    CODDESC = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     INFORARQUIVO = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EXTARQUIVO = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProcessingRoutineId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModifiedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CODROTINA = table.Column<int>(type: "int", nullable: false),
+                    ProcessingRoutineId = table.Column<int>(type: "int", nullable: false),
+                    REGTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    MODTIMESTAMP = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FilePattern", x => x.Id);
+                    table.PrimaryKey("PK_PR030", x => x.CODDESC);
                     table.ForeignKey(
-                        name: "FK_FilePattern_PR012_ProcessingRoutineId",
+                        name: "FK_PR030_PR012_ProcessingRoutineId",
                         column: x => x.ProcessingRoutineId,
                         principalTable: "PR012",
-                        principalColumn: "Id");
+                        principalColumn: "CODDESC",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -466,21 +467,6 @@ namespace Migrations.MSSQL.Migrations
                 name: "IX_CO001_CODEMPRESA_NUMCONTRDIV_CODCPFCNPJCLI",
                 table: "CO001",
                 columns: new[] { "CODEMPRESA", "NUMCONTRDIV", "CODCPFCNPJCLI" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CO001_EnderecoCobrancaCodigoEmpresa_EnderecoCobrancaNumeroContrato",
-                table: "CO001",
-                columns: new[] { "EnderecoCobrancaCodigoEmpresa", "EnderecoCobrancaNumeroContrato" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CO001_EnderecoComercialCodigoEmpresa_EnderecoComercialNumeroContrato",
-                table: "CO001",
-                columns: new[] { "EnderecoComercialCodigoEmpresa", "EnderecoComercialNumeroContrato" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CO001_EnderecoResidencialCodigoEmpresa_EnderecoResidencialNumeroContrato",
-                table: "CO001",
-                columns: new[] { "EnderecoResidencialCodigoEmpresa", "EnderecoResidencialNumeroContrato" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_CO002_NUMCARTCOBDIV",
@@ -513,14 +499,9 @@ namespace Migrations.MSSQL.Migrations
                 column: "SITPARC");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CO092_DCRENDCLI_Cep",
+                name: "IX_CO092_DCRENDCLI_CODCEPCLI",
                 table: "CO092",
-                columns: new[] { "DCRENDCLI", "Cep" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_FilePattern_ProcessingRoutineId",
-                table: "FilePattern",
-                column: "ProcessingRoutineId");
+                columns: new[] { "DCRENDCLI", "CODCEPCLI" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_PR012_NUMPROC",
@@ -541,6 +522,11 @@ namespace Migrations.MSSQL.Migrations
                 name: "IX_PR018_STAAGENDA",
                 table: "PR018",
                 column: "STAAGENDA");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PR030_ProcessingRoutineId",
+                table: "PR030",
+                column: "ProcessingRoutineId");
         }
 
         /// <inheritdoc />
@@ -562,25 +548,25 @@ namespace Migrations.MSSQL.Migrations
                 name: "CO090");
 
             migrationBuilder.DropTable(
+                name: "CO092");
+
+            migrationBuilder.DropTable(
                 name: "CO125");
 
             migrationBuilder.DropTable(
-                name: "FilePattern");
-
-            migrationBuilder.DropTable(
-                name: "CO092");
+                name: "PR030");
 
             migrationBuilder.DropTable(
                 name: "PR012");
 
             migrationBuilder.DropTable(
-                name: "InstitutionProfiles");
+                name: "PR001");
 
             migrationBuilder.DropTable(
                 name: "PR018");
 
             migrationBuilder.DropTable(
-                name: "Repetition");
+                name: "PR017");
         }
     }
 }

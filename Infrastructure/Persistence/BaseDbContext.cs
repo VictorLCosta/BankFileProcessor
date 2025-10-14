@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Infrastructure.Persistence;
 
-internal abstract class BaseDbContext(
+public abstract class BaseDbContext(
     IMultiTenantContextAccessor<ApplicationTenantInfo> accessor,
     DbContextOptions options
 ) 

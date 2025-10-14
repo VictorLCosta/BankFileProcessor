@@ -11,13 +11,13 @@ public abstract class BaseEntity<TId>
 
     private DateTime? _createdAt = DateTime.UtcNow;
 
+    [Column("REGTIMESTAMP")]
     public DateTime? CreatedAt
     {
         get => _createdAt;
         set => _createdAt = value ?? DateTime.UtcNow;
     }
 
+    [Column("MODTIMESTAMP")]
     public DateTime? LastModified { get; set; }
-
-    public Guid LastModifiedBy { get; set; }
 }

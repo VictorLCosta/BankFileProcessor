@@ -4,6 +4,7 @@ namespace Domain.Entities;
 
 public class Phone : BaseChargeEntity
 {
+    [Column("NUMTELCOBR")]
     public long Numero { get; set; }
 
     /// <summary>

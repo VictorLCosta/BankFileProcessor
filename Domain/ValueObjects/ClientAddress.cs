@@ -1,11 +1,8 @@
-﻿namespace Domain.Entities;
+﻿
+namespace Domain.ValueObjects;
 
-public class Address : BaseChargeEntity
+public class ClientAddress : ValueObject
 {
-
-    /// <summary>
-    /// CODCPFCNPJCLI - numeric(14,0) - not null
-    /// </summary>
     [Column("CODCPFCNPJCLI")]
     public long CpfCnpj { get; set; }
 
@@ -135,4 +132,36 @@ public class Address : BaseChargeEntity
 
     [Column("CODCHAVEBANCO")]
     public string? CodigoChaveBanco { get; set; }
+
+    protected override IEnumerable<object?> GetEqualityComponents()
+    {
+        yield return CpfCnpj;
+        yield return Logradouro;
+        yield return NumeroLogradouro;
+        yield return Complemento;
+        yield return Bairro;
+        yield return Cidade;
+        yield return Uf;
+        yield return Cep;
+        yield return DescricaoReferencia;
+        yield return TipoEndereco;
+        yield return SituacaoEnderecoPrincipal;
+        yield return StatusEndereco;
+        yield return DataRemessaArquivo;
+        yield return OrigemEndereco;
+        yield return CodigoEnderecoCobranca;
+        yield return SituacaoBloqCorresp;
+        yield return UsuarioCadastro;
+        yield return DataCadastro;
+        yield return DataRetorno;
+        yield return SituacaoPrioridadeEndereco;
+        yield return RegistroTransferido;
+        yield return Observacao;
+        yield return UsuarioCancelamento;
+        yield return DataCancelamento;
+        yield return UsuarioAlteracao;
+        yield return DataEnderecoConferido;
+        yield return SitEnderecoConferido;
+        yield return CodigoChaveBanco;
+    }
 }

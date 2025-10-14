@@ -82,12 +82,12 @@ public class Client : BaseChargeEntity
         set => _filiacaoCliente = value?.Substring(0, Math.Min(value.Length, 80));
     }
 
-    private Address? _enderecoResidencial;
+    private ClientAddress? _enderecoResidencial;
     /// <summary>
     /// Endereço Residencial
     /// </summary>
 
-    public Address? EnderecoResidencial
+    public ClientAddress? EnderecoResidencial
     {
         get => _enderecoResidencial;
         set { if (value != null) _enderecoResidencial = value; }
@@ -116,12 +116,12 @@ public class Client : BaseChargeEntity
         set => _localTrabalho = value?[..Math.Min(value.Length, 35)];
     }
 
-    private Address? _enderecoComercial;
+    private ClientAddress? _enderecoComercial;
     /// <summary>
     /// Endereço Comercial
     /// </summary>
 
-    public Address? EnderecoComercial
+    public ClientAddress? EnderecoComercial
     {
         get => _enderecoComercial;
         set { if (value != null) _enderecoComercial = value; }
@@ -225,7 +225,7 @@ public class Client : BaseChargeEntity
     /// <summary>
     /// Endereço de Cobrança
     /// </summary>
-    public Address? EnderecoCobranca { get; set; }
+    public ClientAddress? EnderecoCobranca { get; set; }
 
     /// <summary>
     /// TIPREGIMECASAMENTO - char(1)

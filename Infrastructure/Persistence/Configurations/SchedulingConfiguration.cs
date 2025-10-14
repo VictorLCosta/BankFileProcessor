@@ -12,6 +12,14 @@ public class SchedulingConfiguration : IEntityTypeConfiguration<Scheduling>
             .ToTable("PR018");
 
         builder
+            .HasKey(x => x.Id);
+
+        builder
+            .Property(x => x.Id)
+            .HasColumnName("IDAGENDA")
+            .ValueGeneratedOnAdd();
+
+        builder
             .HasIndex(x => x.IsActive);
     }
 }
